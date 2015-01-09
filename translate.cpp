@@ -27,7 +27,6 @@ namespace {
 
 // Work with text below.
 
-
 bool checkCommand(std::istream& uri, const string& value) {
     string token;
     std::getline(uri, token, '/'); // First string is empty.
@@ -160,11 +159,6 @@ public:
             std::getline(uri, langFrom, '/');
             std::getline(uri, langTo, '/');
             req->requestBody().toString(wordsPairsText);
-
-            wordsPairsText = "a,a\nb,b\nc,c\nd,d\n\n\ne,e";
-            langFrom = "enL";
-            langTo = "enG";
-
 
             if (updateDict(langFrom, langTo, wordsPairsText)) {
                 resp << "Dict was inserted/updated successfully.";
