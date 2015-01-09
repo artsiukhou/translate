@@ -19,7 +19,6 @@ using std::cout;
 using std::cerr;
 using std::endl;
 using std::string;
-using std::stringstream;
 
 
 namespace {
@@ -49,7 +48,7 @@ public:
         try {
             DbConn.connect("localhost");
         } catch (const mongo::DBException &e) {
-            cerr << "connection FAILED" << endl;
+            cerr << "dbconnection FAILED(" << e.what() << ")" << endl;
         }
     }
 
@@ -57,7 +56,7 @@ public:
     }
 
     virtual void handleRequest(fastcgi::Request* req, fastcgi::HandlerContext* /* ctx */) override {
-        stringstream resp;
+        std::stringstream resp;
 
         const auto METHOD = req->getRequestMethod();
         std::istringstream uri(req->getURI());
