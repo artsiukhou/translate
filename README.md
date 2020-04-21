@@ -9,7 +9,7 @@ Web service with REST-API:
 
 * GET /translate/ -- show list of supported languages.
 
-* GET /translate/LANG/ -- show list of known words for choosen language.
+* GET /translate/LANG/ -- show list of known words for the choosen language.
 
 * GET /translate/LANG/WORD/ -- show list of languages to translate WORD from LANG
 
